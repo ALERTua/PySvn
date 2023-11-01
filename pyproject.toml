@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "PySVN"
-version = "1.19.18"
+version = "1.19.19"
 description = "The pythonic interface to Subversion. Fork."
 authors = []
 maintainers = ["Aleksei Rubashev <a_rubashev@wargaming.net>"]
