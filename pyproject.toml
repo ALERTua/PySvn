@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "PySVN"
+version = "1.19.18"
+description = "The pythonic interface to Subversion. Fork."
+authors = []
+maintainers = ["Aleksei Rubashev <a_rubashev@wargaming.net>"]
+packages = [
+    { include = "svn" },
+]
+
+[tool.poetry.dependencies]
+python = ">=2.7.18"
+python-dateutil = ">=2.2"
+
+[tool.poetry.dev-dependencies]
+poetry = "*"  #
+pytest = ">=4.6"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
