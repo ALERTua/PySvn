@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "PySVN"
-version = "1.19.19"
+version = "1.19.21"
 description = "The pythonic interface to Subversion. Fork."
 authors = []
 maintainers = ["Aleksei Rubashev <a_rubashev@wargaming.net>"]
@@ -12,7 +12,12 @@ packages = [
 python = ">=2.7.18"
 python-dateutil = ">=2.2"
 
-[tool.poetry.dev-dependencies]
+[[tool.poetry.source]]
+name = "artifactory_upload"
+url = "https://artifactory.wgdp.io/artifactory/api/pypi/wotk-pypi-wotdevtool/simple"
+priority = "primary"
+
+[poetry.group.dev.dependencies]
 poetry = "*"  #
 pytest = ">=4.6"
 
