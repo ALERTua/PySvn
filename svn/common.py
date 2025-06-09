@@ -5,7 +5,7 @@ import xml.etree.ElementTree
 
 import dateutil.parser
 
-import svn.common_base
+from svn.common_base import CommonBase
 import svn.constants
 import svn.exception
 
@@ -18,7 +18,7 @@ _HUNK_HEADER_RIGHT_PREFIX = '+++ '
 _HUNK_HEADER_LINE_NUMBERS_PREFIX = '@@ '
 
 
-class CommonClient(svn.common_base.CommonBase):
+class CommonClient(CommonBase):
     def __init__(self, url_or_path, type_, username=None, password=None,
                  svn_filepath='svn', trust_cert=None, env={}, *args, **kwargs):
         super(CommonClient, self).__init__(*args, **kwargs)
@@ -316,7 +316,7 @@ class CommonClient(svn.common_base.CommonBase):
             if revision is not None:
                 revision = int(revision)
 
-            yield _STATUS_ENTRY(
+            yield svn.constants._STATUS_ENTRY(
                 name=name,
                 type_raw_name=change_type_raw,
                 type=change_type,

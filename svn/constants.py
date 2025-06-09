@@ -1,3 +1,15 @@
+import collections
+
+_STATUS_ENTRY = \
+    collections.namedtuple(
+        '_STATUS_ENTRY', [
+            'name',
+            'type_raw_name',
+            'type',
+            'revision',
+        ])
+
+
 # Kinds
 
 K_DIR = 'dir'

@@ -1,19 +1,10 @@
 import os
-import collections
 
 import xml.etree
 
 import svn.constants
-import svn.common
+from svn.common import CommonClient
 
-_STATUS_ENTRY = \
-    collections.namedtuple(
-        '_STATUS_ENTRY', [
-            'name',
-            'type_raw_name',
-            'type',
-            'revision',
-        ])
 
 
 class LocalClient(svn.common.CommonClient):
@@ -95,7 +86,7 @@ class LocalClient(svn.common.CommonClient):
             if revision is not None:
                 revision = int(revision)
 
-            yield _STATUS_ENTRY(
+            yield svn.constants._STATUS_ENTRY(
                 name=name,
                 type_raw_name=change_type_raw,
                 type=change_type,
