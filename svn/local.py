@@ -7,9 +7,9 @@ from svn.common import CommonClient
 
 
 
-class LocalClient(svn.common.CommonClient):
-    def __init__(self, path_, *args, **kwargs):
-        if os.path.exists(path_) is False:
+class LocalClient(CommonClient):
+    def __init__(self, path_, allow_nonexistent=False, *args, **kwargs):
+        if not allow_nonexistent and os.path.exists(path_) is False:
             raise EnvironmentError("Path does not exist: %s" % path_)
 
         super(LocalClient, self).__init__(
